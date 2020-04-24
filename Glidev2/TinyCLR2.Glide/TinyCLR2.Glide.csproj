@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\GHIElectronics.TinyCLR.Core.2.0.0-preview5\build\net452\GHIElectronics.TinyCLR.Core.props" Condition="Exists('..\packages\GHIElectronics.TinyCLR.Core.2.0.0-preview5\build\net452\GHIElectronics.TinyCLR.Core.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{62D71BE0-FC53-4A29-9B59-9AFC4BBDCE28}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>TinyCLR2.Glide</RootNamespace>
+    <AssemblyName>TinyCLR2.Glide</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A1948822-69DD-4150-919B-F3F42EFB71CC};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Bitmap.cs" />
+    <Compile Include="Colors.cs" />
+    <Compile Include="Display\CalibrationWindow.cs" />
+    <Compile Include="Display\DisplayObject.cs" />
+    <Compile Include="Display\DisplayObjectContainer.cs" />
+    <Compile Include="Display\Graphics.cs" />
+    <Compile Include="Display\Window.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="Events\Events.cs" />
+    <Compile Include="Ext\Bitmaps.cs" />
+    <Compile Include="Ext\Colors.cs" />
+    <Compile Include="FontManager.cs" />
+    <Compile Include="Geom\Point.cs" />
+    <Compile Include="Geom\Rectangle.cs" />
+    <Compile Include="Geom\Size.cs" />
+    <Compile Include="Glide.cs" />
+    <Compile Include="GlideLoader.cs" />
+    <Compile Include="GlideTouch.cs" />
+    <Compile Include="GlideUtils.cs" />
+    <Compile Include="Media\Color.cs" />
+    <Compile Include="MessageBoxManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="RadioButtonManager.cs" />
+    <Compile Include="Tween.cs" />
+    <Compile Include="UI\Button.cs" />
+    <Compile Include="UI\Canvas.cs" />
+    <Compile Include="UI\CheckBox.cs" />
+    <Compile Include="UI\DataGrid\DataGrid.cs" />
+    <Compile Include="UI\DataGrid\DataGridColumn.cs" />
+    <Compile Include="UI\DataGrid\DataGridItem.cs" />
+    <Compile Include="UI\DataGrid\DataGridItemComparer.cs" />
+    <Compile Include="UI\Dropdown.cs" />
+    <Compile Include="UI\Image.cs" />
+    <Compile Include="UI\Input\BaseEvent.cs" />
+    <Compile Include="UI\Input\CaptureMode.cs" />
+    <Compile Include="UI\Input\GenericEvent.cs" />
+    <Compile Include="UI\Input\HardwareButton.cs" />
+    <Compile Include="UI\Input\TouchEvent.cs" />
+    <Compile Include="UI\Input\TouchEventHandler.cs" />
+    <Compile Include="UI\Input\TouchGesture.cs" />
+    <Compile Include="UI\Input\TouchGestureEventArgs.cs" />
+    <Compile Include="UI\Input\TouchGestureEventHandler.cs" />
+    <Compile Include="UI\Input\TouchInput.cs" />
+    <Compile Include="UI\Input\TouchMessages.cs" />
+    <Compile Include="UI\Keyboard\Keyboard.cs" />
+    <Compile Include="UI\Keyboard\KeyboardText.cs" />
+    <Compile Include="UI\List\IListItem.cs" />
+    <Compile Include="UI\List\List.cs" />
+    <Compile Include="UI\List\ListItem.cs" />
+    <Compile Include="UI\Modal\MessageBox.cs" />
+    <Compile Include="UI\Modal\Modal.cs" />
+    <Compile Include="UI\ProgressBar.cs" />
+    <Compile Include="UI\RadioButton.cs" />
+    <Compile Include="UI\Slider.cs" />
+    <Compile Include="UI\TextBlock.cs" />
+    <Compile Include="UI\Text\InputBox.cs" />
+    <Compile Include="UI\Text\PasswordBox.cs" />
+    <Compile Include="UI\Text\TextBox.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Resources\droid_reg08.tinyfnt" />
+    <None Include="Resources\droid_reg09.tinyfnt" />
+    <None Include="Resources\droid_reg10.tinyfnt" />
+    <None Include="Resources\droid_reg11.tinyfnt" />
+    <None Include="Resources\droid_reg12.tinyfnt" />
+    <None Include="Resources\droid_reg14.tinyfnt" />
+    <None Include="Resources\droid_reg18.tinyfnt" />
+    <None Include="Resources\droid_reg24.tinyfnt" />
+    <None Include="Resources\droid_reg32.tinyfnt" />
+    <None Include="Resources\droid_reg48.tinyfnt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Down.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Button_Up.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBox_Off.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CheckBox_On.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataGridIcon_Asc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DataGridIcon_Desc.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DropdownButton_Down.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DropdownButton_Up.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DropdownText_Down.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\DropdownText_Up.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keyboard_320x128_Up_Lowercase.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keyboard_320x128_Up_Numbers.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keyboard_320x128_Up_Symbols.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Keyboard_320x128_Up_Uppercase.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Modal.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProgressBar.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ProgressBar_Fill.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\RadioButton.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TextBox.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\TinyCLR-Libraries\GHIElectronics.TinyCLR.Devices.Display\GHIElectronics.TinyCLR.Devices.Display.csproj">
+      <Project>{2E1DCA92-5601-4038-A1F0-01A604FB0B65}</Project>
+      <Name>GHIElectronics.TinyCLR.Devices.Display</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\TinyCLR-Libraries\GHIElectronics.TinyCLR.Drawing\GHIElectronics.TinyCLR.Drawing.csproj">
+      <Project>{52A54E94-2FD8-4EEE-822C-C8C7F27AF423}</Project>
+      <Name>GHIElectronics.TinyCLR.Drawing</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\System.XML\System.XML.csproj">
+      <Project>{CBF98196-A6F7-40B8-8D09-73E9B7BE37EB}</Project>
+      <Name>System.XML</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\GHIElectronics.TinyCLR.Core.2.0.0-preview5\build\net452\GHIElectronics.TinyCLR.Core.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\GHIElectronics.TinyCLR.Core.2.0.0-preview5\build\net452\GHIElectronics.TinyCLR.Core.props'))" />
+  </Target>
+</Project>
