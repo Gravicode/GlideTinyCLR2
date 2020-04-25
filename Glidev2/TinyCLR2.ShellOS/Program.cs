@@ -89,7 +89,7 @@ namespace TinyCLR2.ShellOS
                 case "CD..":
                     {
                         DirectoryInfo dir = new DirectoryInfo(CurrentPath);
-                        if (CurrentPath.ToUpper() != "\\SD\\")
+                        if (CurrentPath.ToUpper() != "\\")//SD\\
                         {
                             CurrentPath = Strings.NormalizeDirectory(dir.Parent.FullName);
 
@@ -186,10 +186,12 @@ namespace TinyCLR2.ShellOS
                         break;
                     case ".jpg":
                         {
-                            var file = new FileStream(info.FullName, FileMode.Open);
-                            Image bitmap = Bitmap.FromStream(file);
+                            var dataArray = File.ReadAllBytes(info.FullName);
+                            var bitmap = new Bitmap(dataArray, BitmapImageType.Jpeg);
+                            //Image bitmap = Bitmap.FromStream(file);
                             //var storage = sdCard.StorageDevice;
                             //Bitmap bitmap = storage.LoadBitmap(info.FullName, Bitmap.BitmapImageType.Jpeg);
+                           
                             CallPrintEvent((Bitmap)bitmap);
                             Result = true;
                             Thread.Sleep(2000);
@@ -197,10 +199,11 @@ namespace TinyCLR2.ShellOS
                         break;
                     case ".bmp":
                         {
-                            var file = new FileStream(info.FullName, FileMode.Open);
-                            Image bitmap = Bitmap.FromStream(file);
+                            var dataArray = File.ReadAllBytes(info.FullName);
+                            var bitmap = new Bitmap(dataArray, BitmapImageType.Bmp);
                             //var storage = sdCard.StorageDevice;
                             //Bitmap bitmap = storage.LoadBitmap(info.FullName, Bitmap.BitmapImageType.Bmp);
+
                             CallPrintEvent((Bitmap)bitmap);
                             Result = true;
                             Thread.Sleep(2000);
@@ -208,10 +211,11 @@ namespace TinyCLR2.ShellOS
                         break;
                     case ".gif":
                         {
-                            var file = new FileStream(info.FullName, FileMode.Open);
-                            Image bitmap = Bitmap.FromStream(file);
+                            var dataArray = File.ReadAllBytes(info.FullName);
+                            var bitmap = new Bitmap(dataArray, BitmapImageType.Gif);
                             //var storage = sdCard.StorageDevice;
                             //Bitmap bitmap = storage.LoadBitmap(info.FullName, Bitmap.BitmapImageType.Gif);
+
                             CallPrintEvent((Bitmap)bitmap);
                             Result = true;
                             Thread.Sleep(2000);
@@ -333,7 +337,7 @@ namespace TinyCLR2.ShellOS
             MaxLine = ScreenHeight / 20;
             CurrentLine = 0;
             CurrentFont = Resources.GetFont(Resources.FontResources.NinaB);
-            CurrentPath = "\\SD\\";
+            CurrentPath = "\\";// "\\SD\\";
             DataLines = new ArrayList();
             for (int i = 0; i < MaxLine; i++) DataLines.Add(string.Empty);
             TypedCommand = string.Empty; if (basic == null)
